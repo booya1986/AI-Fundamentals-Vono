@@ -1,0 +1,74 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project
+
+Single-file Hebrew/RTL HTML slide deck for the Vono workshop ("AI Fundamentals @ Vono"). Built off the same template family as the Poalim and Remotion-Tutorial decks. ~40 slides, dark theme, brand-green neon (`#22C55E` / `#4ade80`).
+
+## Files
+
+- `index.html` — the entire deck (HTML + inline `<style>` + inline `<script>`). ~3900 lines.
+- `avi.png` — clean cutout of the presenter, used in slide 2 (About).
+- `image.png` — Aviv Madar (Vono founder) photo with NERF guns, used in the closing-quote slide.
+
+There is no build step, no package manager, no tests. To preview, open `index.html` directly in a browser:
+
+```bash
+open index.html      # macOS
+```
+
+## Architecture
+
+### Slide model
+
+Every slide is a `<section class="slide" data-layout="<type>" data-title="...">` inside the single `<div class="slideshow">` container. Only the slide with class `active` is visible; transitions are CSS opacity/transform on `.exit-left` / `.exit-right`.
+
+`data-title` is the Hebrew title used by the dot-nav tooltip and aria-live announcements. `data-layout` selects which CSS rules apply.
+
+### Layouts (data-layout values, all defined in the inline `<style>`)
+
+`title` `about` `yesno` `big-question` `divider` `stat` `quote` `compare` `timeline` `tokens` `probability` `cards` `badgood` `demo` `content` `centered` `process` `pillars` `statement` `cta` `socials` `person-quote`
+
+To add a slide, pick the closest layout and copy the structure of an existing slide that uses it. Layout-specific CSS lives next to its layout block in the `<style>` section.
+
+### Citation slides (the Poalim hierarchy)
+
+Quote slides that cite an article (`HBR`, `WEF`, `MCKINSEY`, `DELOITTE`, `GARTNER`, plus Aviv) follow this exact order — match it when adding new ones:
+
+1. `<span class="quote-watermark">XXX</span>` — large faded letters in the bottom-right corner
+2. `<div class="quote-source">SOURCE · DATE</div>` — small uppercase neon-green label at the top
+3. `<div class="quote-text">…<mark>highlighted</mark>…</div>` — light-weight body, `max-width: 820px`
+4. `<div class="article-links"><a class="article-link">…</a></div>` — subtle rectangular gray link
+
+Stat slides (78%, 88/11, 40%) use the same quote layout — the percentage just sits inside `<mark>` in the quote text. Do **not** revive the old `.stat-takeaway` block (the green-bordered side-bar takeaway) — Avi rejected it.
+
+### Navigation chrome (built once at script bottom)
+
+- `#dotNav` — auto-built from the slide list; the active dot expands and shows the slide number (`01`, `02`, …)
+- `#prevBtn` / `#nextBtn` — circular nav buttons. RTL convention: prev points `›` (right) and sits on the right; next points `‹` (left) and sits on the left. Do not flip the SVGs.
+- `#scCurrent` / `#scTotal` — top-left counter (`01 / 40`)
+- `#fullscreenBtn` — toggles `document.fullscreen`, also bound to `F` key
+- `#progressBar` — green strip that fills as you advance
+- `#keyboardHint` — `[←] [→] [Space]` chips + `לניווט`, fades after 6s
+- Keyboard: ArrowLeft = next, ArrowRight = prev (RTL), Space/PageDown = next, PageUp = prev, Home/End, F for fullscreen
+- Touch: swipe left advances (RTL-correct)
+
+### CSS conventions (deck-wide)
+
+- Brand tokens at `:root`: `--accent`, `--accent-light`, `--bg`, `--text-heading`, `--text-body`, `--text-muted`
+- All decorative card/content icons are inline SVG (`stroke="currentColor"`, `fill="none"`, `stroke-width="1.5"`, `stroke-linecap="round"`) with a green neon glow via `filter: drop-shadow(...)`. **Never use emojis or Unicode glyphs** as card icons — Avi specifically rejected this and the rule is documented in his memory file.
+- `.content-card` is a CSS Grid: `"icon title" / "desc desc"`. Icon and title share the top row, description spans both columns below.
+- `.card-title` and `.card-desc` are `text-align: right` (RTL). The `.card-desc` rule is intentionally written as `.slide p.card-desc, .card-desc {…}` because `.slide p { text-align: center }` would otherwise win on specificity.
+- The default `.slide` background is a green radial gradient. The Aviv quote slide uses `data-layout="quote"` so it inherits everything correctly — don't add stronger gradients on stat/quote layouts (Avi pushed back on amplification).
+- "Project level" badges (slide "הפרויקטים שלכם") use `.lvl-1` (green = easy), `.lvl-2` (cyan #38BDF8 = medium), `.lvl-3` (orange #FB923C = advanced). The colored chips on the prompting slide (`[ROLE]` etc.) use the same five-color palette via CSS variables.
+
+### Em dashes are banned
+
+Avi removed all `—` from the deck and prefers regular hyphens. When adding text don't reintroduce em dashes.
+
+### Slide order at a glance
+
+Title → About (`avi.png`) → Yes/No → Icebreaker → Part 2 (state of orgs: 78% / 88-11% / 40% / HBR / WEF / WEF / Deloitte / 56% / Compare) → Timeline (Gen-AI history) → Summary → Part 4 (mental model: Statement / Tokens / Probability / Attention / 5 behaviors / Hallucinations) → Part 5 (live demo: setup / summary) → Part 6 (Players / Practical truth) → Part 7 (5 concepts: Context / Prompt / RAG / Reasoning / Tool Use) → Tool Matrix → Part 9 (divider / Auto-vs-Agent) → Projects (3×3 grid) → **Aviv quote (penultimate)** → Socials (last).
+
+If you reorder, the dot-nav and counter rebuild automatically from the DOM order — no JS changes needed.
