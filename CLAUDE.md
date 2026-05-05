@@ -62,9 +62,14 @@ The `<head>` block carries Open Graph + Twitter Card meta tags pointing at `asse
 
 ### Animations
 
-All `@keyframes` animations are wrapped in `@media (prefers-reduced-motion: reduce)` overrides at the bottom of the `<style>` block. When adding a new animation, add a corresponding `animation: none;` rule there. Currently guarded: `.slide::before` (gridDrift), `.about-smoke .smoke` (smokeDrift), `.demo-blink`/`.cta-meta-item .pulse` (blink), `.slide[data-layout="probability"] .prob-fill` (probFill), `.cw-token` (cwFlow).
+All `@keyframes` animations are wrapped in `@media (prefers-reduced-motion: reduce)` overrides at the bottom of the `<style>` block. When adding a new animation, add a corresponding `animation: none;` rule there. Currently guarded: `.slide::before` (gridDrift), `.about-smoke .smoke` (smokeDrift), `.demo-blink`/`.cta-meta-item .pulse` (blink), `.slide[data-layout="probability"] .prob-fill` (probFill), `.cw-token` (cwFlow), `.cards-grid > .content-card` and `.players-row > .player` (cardEntry stagger), `.statement-text` and `.statement-text mark` (statement reveal).
 
-The probability bars (slide 20) use a CSS variable `--w` on each `.prob-fill` (e.g. `style="--w: 62%;"`) and animate from 0 to that width when the slide becomes `.active`. To change a percentage, edit the `--w` inline style.
+**Slide-entry choreography (added in polish pass):**
+
+- **Card stagger** — every `.cards-grid` slide and the `.players-row` players slide stagger their children in via `cardEntry` keyframes, with `nth-child(1..14)` setting `animation-delay` (~0.05–0.97s). Adds depth without changing layout.
+- **Statement reveal** — slide 18 (`data-layout="statement"`) keeps `.statement-text` muted gray for 300ms, then fades to heading color while the inner `<mark>` (the climax phrase) does a `markReveal` keyframe: scale 1 → 1.06 → 1 with a green glow. Drives the eye to the key phrase.
+- **Probability bars** — `.prob-fill` uses CSS variable `--w` (e.g. `style="--w: 62%;"`) and animates from 0 to `var(--w)` with stagger via `nth-child` delays.
+- **Count-up for `<mark>` percentages** — JS at the bottom of `<script>` watches every slide's `.active` class via `MutationObserver`. When a slide becomes active, it inspects each `<mark>` and if the text matches `/^(\d+)(%?)$/`, animates it from 0 to the target value over ~600–1400ms. The dataset (`data-counted-target`, `data-counted-suffix`) is cached so re-entry replays the animation. Runs only when `prefers-reduced-motion` is not set.
 
 ### CSS conventions (deck-wide)
 
