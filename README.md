@@ -87,7 +87,9 @@ AI-Fundamentals-Vono/
 ├── index.html         ← כל הדק (HTML + CSS + JS inline)
 ├── assets/
 │   ├── avi.png        ← פורטרט (שקף "מי אני")
-│   └── image.png      ← אביב מדר (שקף הציטוט הסוגר)
+│   ├── image.webp     ← אביב מדר (שקף הציטוט הסוגר, cutout שקוף)
+│   ├── favicon.png    ← favicon (לוגו avilevi.co.il)
+│   └── screenshots/   ← תצלומי שקפים ל-README ול-OG share
 ├── README.md          ← הקובץ הזה
 ├── CLAUDE.md          ← הוראות לעבודה עם הקוד
 └── .gitignore

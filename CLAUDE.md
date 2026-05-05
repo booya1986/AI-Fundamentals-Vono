@@ -10,7 +10,7 @@ Single-file Hebrew/RTL HTML slide deck for the Vono workshop ("AI Fundamentals @
 
 - `index.html` — the entire deck (HTML + inline `<style>` + inline `<script>`). ~3600 lines.
 - `assets/avi.png` — clean cutout of the presenter, used in slide 2 (About).
-- `assets/image.jpg` — Aviv Madar (Vono founder) photo with NERF guns, used in the closing-quote slide.
+- `assets/image.webp` — Aviv Madar (Vono founder) photo with NERF guns (transparent cutout), used in the closing-quote slide. WebP with alpha; encoded via `cwebp -q 85 -alpha_q 100 -resize 1200 0`.
 - `assets/favicon.png` — site favicon (256×256 crop of avi.png).
 - `assets/screenshots/` — slide screenshots used by the README and as the OG share image.
 
