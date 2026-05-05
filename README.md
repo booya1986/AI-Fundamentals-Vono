@@ -84,18 +84,24 @@ open index.html
 
 ```
 AI-Fundamentals-Vono/
-├── index.html         ← כל הדק (HTML + CSS + JS inline)
+├── index.html              ← כל הדק (HTML + CSS + JS inline)
 ├── assets/
-│   ├── avi.png        ← פורטרט (שקף "מי אני")
-│   ├── image.webp     ← אביב מדר (שקף הציטוט הסוגר, cutout שקוף)
-│   ├── favicon.png    ← favicon (לוגו avilevi.co.il)
-│   └── screenshots/   ← תצלומי שקפים ל-README ול-OG share
-├── README.md          ← הקובץ הזה
-├── CLAUDE.md          ← הוראות לעבודה עם הקוד
+│   ├── avi.png             ← פורטרט (שקף "מי אני")
+│   ├── image.webp          ← אביב מדר (cutout שקוף)
+│   ├── favicon.png         ← favicon (לוגו avilevi.co.il)
+│   └── screenshots/        ← תצלומי שקפים ל-README ול-OG share
+├── skills/                 ← 3 Claude Skills לצוות Vono
+│   ├── rfp-writer/         ← כתיבת RFPs ציבוריים
+│   ├── rfp-response-analyzer/ ← ניתוח הצעות ספקים
+│   ├── vono-methodology/   ← מתודולוגיית הייעוץ של Vono
+│   └── README.md           ← מדריך התקנה ושימוש
+├── README.md               ← הקובץ הזה
+├── CLAUDE.md               ← הוראות לעבודה עם הקוד
 └── .gitignore
 ```
 
-לפרטי הארכיטקטורה, ראו **[CLAUDE.md](./CLAUDE.md)**.
+לפרטי הארכיטקטורה של הדק, ראו **[CLAUDE.md](./CLAUDE.md)**.
+לסקילים של Vono, ראו **[skills/README.md](./skills/README.md)**.
 
 ---
 
@@ -110,6 +116,20 @@ AI-Fundamentals-Vono/
 <td colspan="2"><img src="./assets/screenshots/slide-39-aviv.png" alt="Aviv Madar closing quote" /></td>
 </tr>
 </table>
+
+---
+
+## בונוס: Skills לצוות Vono
+
+הריפו כולל 3 Claude Skills שנבנו במיוחד לצוות Vono כדי לקודד את המתודולוגיה ולחסוך זמן ביומיום:
+
+| Skill | מתי מופעל |
+|-------|-----------|
+| **[`rfp-writer`](./skills/rfp-writer/)** | כתיבת RFPs ציבוריים (חשכ"ל, משרד החינוך, בנקים) - מבנה תקני, סעיפי חובה, אמות מידה |
+| **[`rfp-response-analyzer`](./skills/rfp-response-analyzer/)** | ניתוח הצעות ספקים מול RFP - אימות תנאי סף, ניקוד, דגלי סיכון |
+| **[`vono-methodology`](./skills/vono-methodology/)** | מתודולוגיית הייעוץ של Vono - one-pager, kickoff, status reports, RAG, lessons-learned |
+
+הוראות התקנה ושימוש: **[skills/README.md](./skills/README.md)**
 
 ---
 

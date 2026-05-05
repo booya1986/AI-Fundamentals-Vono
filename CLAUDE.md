@@ -13,6 +13,7 @@ Single-file Hebrew/RTL HTML slide deck for the Vono workshop ("AI Fundamentals @
 - `assets/image.webp` — Aviv Madar (Vono founder) photo with NERF guns (transparent cutout), used in the closing-quote slide. WebP with alpha; encoded via `cwebp -q 85 -alpha_q 100 -resize 1200 0`.
 - `assets/favicon.png` — site favicon (256×256 crop of avi.png).
 - `assets/screenshots/` — slide screenshots used by the README and as the OG share image.
+- `skills/` — three Claude Skills shareable with the Vono team: `rfp-writer`, `rfp-response-analyzer`, `vono-methodology`. Each is a folder with `SKILL.md` + `references/` markdown files. Self-contained from the deck — they live in the same repo so the team can clone-and-share, but they don't depend on or reference the deck.
 
 There is no build step, no package manager, no tests. To preview, open `index.html` directly in a browser:
 
