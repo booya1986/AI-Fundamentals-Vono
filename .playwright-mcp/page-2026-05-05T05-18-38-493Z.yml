@@ -1,0 +1,63 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]: Workshop · Vono · אפריל 2026
+    - heading "AI Fundamentals @ Vono" [level=1] [ref=e5]
+    - paragraph [ref=e6]: מפגש פתיחה · יסודות ה-GenAI
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - generic [ref=e9]: "01"
+      - generic [ref=e10]: /
+      - generic [ref=e11]: "40"
+    - button "Toggle fullscreen" [ref=e12] [cursor=pointer]:
+      - img [ref=e13]
+  - generic:
+    - button "Previous slide" [disabled]:
+      - img
+    - button "Next slide" [ref=e15] [cursor=pointer]:
+      - img [ref=e16]
+  - generic [ref=e18]:
+    - button "פתיחה (שקף 1)" [ref=e19] [cursor=pointer]: "01"
+    - button "מי אני (שקף 2)" [ref=e20] [cursor=pointer]: "02"
+    - button "מה זה היום ומה זה לא (שקף 3)" [ref=e21] [cursor=pointer]: "03"
+    - button "סבב פתיחה (שקף 4)" [ref=e22] [cursor=pointer]: "04"
+    - 'button "חלק 2: תמונת מצב 2026 (שקף 5)" [ref=e23] [cursor=pointer]': "05"
+    - button "78% משתמשים יומית (שקף 6)" [ref=e24] [cursor=pointer]: "06"
+    - 'button "פער הביצוע: 88% מול 11% (שקף 7)" [ref=e25] [cursor=pointer]': "07"
+    - button "40% עד סוף 2026 (שקף 8)" [ref=e26] [cursor=pointer]: "08"
+    - button "91% / 38% - מובילים מול ארגונים (שקף 9)" [ref=e27] [cursor=pointer]: "09"
+    - button "25% - נקודת המפנה (שקף 10)" [ref=e28] [cursor=pointer]: "10"
+    - button "45% משתמשים, ביטחון יורד (שקף 11)" [ref=e29] [cursor=pointer]: "11"
+    - 'button "המכשול: כישורים, לא טכנולוגיה (שקף 12)" [ref=e30] [cursor=pointer]': "12"
+    - button "56% - היתרון התחרותי (שקף 13)" [ref=e31] [cursor=pointer]: "13"
+    - button "מה הלקוחות שלכם רואים מול מה שצריך (שקף 14)" [ref=e32] [cursor=pointer]: "14"
+    - button "קיצור תולדות ה-Gen AI (שקף 15)" [ref=e33] [cursor=pointer]: "15"
+    - button "המסקנה מציר הזמן (שקף 16)" [ref=e34] [cursor=pointer]: "16"
+    - button "איך עובד מודל שפה (שקף 17)" [ref=e35] [cursor=pointer]: "17"
+    - button "המשפט המכונן (שקף 18)" [ref=e36] [cursor=pointer]: "18"
+    - button "מה זה טוקן (שקף 19)" [ref=e37] [cursor=pointer]: "19"
+    - button "איך הוא בוחר את הטוקן הבא (שקף 20)" [ref=e38] [cursor=pointer]: "20"
+    - button "מנגנון Attention (שקף 21)" [ref=e39] [cursor=pointer]: "21"
+    - button "5 התנהגויות מהמשפט הזה (שקף 22)" [ref=e40] [cursor=pointer]: "22"
+    - button "הזיות בעבודה אמיתית (שקף 23)" [ref=e41] [cursor=pointer]: "23"
+    - 'button "חלק 5: דמו חי (שקף 24)" [ref=e42] [cursor=pointer]': "24"
+    - 'button "הדמו: השאלה והכלים (שקף 25)" [ref=e43] [cursor=pointer]': "25"
+    - button "סיכום הדמו (שקף 26)" [ref=e44] [cursor=pointer]: "26"
+    - button "מי השחקנים (שקף 27)" [ref=e45] [cursor=pointer]: "27"
+    - button "האמת המעשית (שקף 28)" [ref=e46] [cursor=pointer]: "28"
+    - 'button "חלק 7: 5 המושגים (שקף 29)" [ref=e47] [cursor=pointer]': "29"
+    - button "Context Window (שקף 30)" [ref=e48] [cursor=pointer]: "30"
+    - button "מבנה פרומפט (שקף 31)" [ref=e49] [cursor=pointer]: "31"
+    - button "RAG (שקף 32)" [ref=e50] [cursor=pointer]: "32"
+    - button "חשיבה מעמיקה (שקף 33)" [ref=e51] [cursor=pointer]: "33"
+    - button "Tool Use (שקף 34)" [ref=e52] [cursor=pointer]: "34"
+    - button "מטריצת הכלים (שקף 35)" [ref=e53] [cursor=pointer]: "35"
+    - 'button "חלק 9: AI ארגוני (שקף 36)" [ref=e54] [cursor=pointer]': "36"
+    - button "אוטומציה מול סוכן (שקף 37)" [ref=e55] [cursor=pointer]: "37"
+    - button "הפרויקטים שלכם (שקף 38)" [ref=e56] [cursor=pointer]: "38"
+    - button "ציטוט אביב מדר (שקף 39)" [ref=e57] [cursor=pointer]: "39"
+    - button "איפה מוצאים אותי (שקף 40)" [ref=e58] [cursor=pointer]: "40"
+  - generic [ref=e60]:
+    - img [ref=e62]
+    - img [ref=e65]
+    - generic [ref=e67]: Space
+    - generic [ref=e68]: לניווט

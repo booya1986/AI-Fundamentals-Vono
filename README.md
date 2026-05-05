@@ -10,6 +10,8 @@
 
 **Live deck →** [booya1986.github.io/AI-Fundamentals-Vono](https://booya1986.github.io/AI-Fundamentals-Vono/)
 
+[![AI Fundamentals @ Vono - Title Slide](./assets/screenshots/slide-01-title.png)](https://booya1986.github.io/AI-Fundamentals-Vono/)
+
 </div>
 
 ---
@@ -92,6 +94,20 @@ AI-Fundamentals-Vono/
 ```
 
 לפרטי הארכיטקטורה, ראו **[CLAUDE.md](./CLAUDE.md)**.
+
+---
+
+## דוגמאות שקפים
+
+<table>
+<tr>
+<td width="50%"><img src="./assets/screenshots/slide-06-stat.png" alt="Stat slide — 78% Israeli HiTech use AI daily" /></td>
+<td width="50%"><img src="./assets/screenshots/slide-38-projects.png" alt="Projects slide — 9 example projects in 3×3 grid" /></td>
+</tr>
+<tr>
+<td colspan="2"><img src="./assets/screenshots/slide-39-aviv.png" alt="Aviv Madar closing quote" /></td>
+</tr>
+</table>
 
 ---
 
