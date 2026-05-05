@@ -75,7 +75,7 @@ open index.html
 | **7** | 5 המושגים — Context Window · Prompting · RAG · Reasoning · Tool Use |
 | **8** | מפת הכלים — בחירה לפי משימה |
 | **9** | חשיבה ארגונית — אוטומציה מול סוכן |
-| **10** | הפרויקטים — 9 דוגמאות לבחירה (קל / בינוני / מתקדם) |
+| **10** | הפרויקטים — 14 דוגמאות לבחירה (קל / בינוני / מתקדם) |
 | _Closing_ | ציטוט המייסד · אביב מדר · Let's Connect |
 
 ---
@@ -102,7 +102,7 @@ AI-Fundamentals-Vono/
 <table>
 <tr>
 <td width="50%"><img src="./assets/screenshots/slide-06-stat.png" alt="Stat slide — 78% Israeli HiTech use AI daily" /></td>
-<td width="50%"><img src="./assets/screenshots/slide-38-projects.png" alt="Projects slide — 9 example projects in 3×3 grid" /></td>
+<td width="50%"><img src="./assets/screenshots/slide-38-projects.png" alt="Projects slide — 14 example projects, last 2 centered" /></td>
 </tr>
 <tr>
 <td colspan="2"><img src="./assets/screenshots/slide-39-aviv.png" alt="Aviv Madar closing quote" /></td>

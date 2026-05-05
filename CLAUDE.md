@@ -62,6 +62,7 @@ Stat slides (78%, 88/11, 40%) use the same quote layout — the percentage just 
 - `.card-title` and `.card-desc` are `text-align: right` (RTL). The `.card-desc` rule is intentionally written as `.slide p.card-desc, .card-desc {…}` because `.slide p { text-align: center }` would otherwise win on specificity.
 - The default `.slide` background is a green radial gradient. The Aviv quote slide uses `data-layout="quote"` so it inherits everything correctly — don't add stronger gradients on stat/quote layouts (Avi pushed back on amplification).
 - "Project level" badges (slide "הפרויקטים שלכם") use `.lvl-1` (green = easy), `.lvl-2` (cyan #38BDF8 = medium), `.lvl-3` (orange #FB923C = advanced). The colored chips on the prompting slide (`[ROLE]` etc.) use the same five-color palette via CSS variables.
+- The projects grid (14 cards) uses a virtual 6-column layout with each card spanning 2 columns. Cards 13–14 are explicitly placed (`grid-column: 2 / span 2` and `4 / span 2`) so the last row centers two cards on a row of three instead of orphaning them. The selectors guard with `:nth-last-child(N):nth-child(M)` so the centering only triggers when total = 14.
 
 ### Em dashes are banned
 
@@ -69,6 +70,6 @@ Avi removed all `—` from the deck and prefers regular hyphens. When adding tex
 
 ### Slide order at a glance
 
-Title → About (`avi.png`) → Yes/No → Icebreaker → Part 2 (state of orgs: 78% / 88-11% / 40% / HBR / WEF / WEF / Deloitte / 56% / Compare) → Timeline (Gen-AI history) → Summary → Part 4 (mental model: Statement / Tokens / Probability / Attention / 5 behaviors / Hallucinations) → Part 5 (live demo: setup / summary) → Part 6 (Players / Practical truth) → Part 7 (5 concepts: Context / Prompt / RAG / Reasoning / Tool Use) → Tool Matrix → Part 9 (divider / Auto-vs-Agent) → Projects (3×3 grid) → **Aviv quote (penultimate)** → Socials (last).
+Title → About (`avi.png`) → Yes/No → Icebreaker → Part 2 (state of orgs: 78% / 88-11% / 40% / HBR / WEF / WEF / Deloitte / 56% / Compare) → Timeline (Gen-AI history) → Summary → Part 4 (mental model: Statement / Tokens / Probability / Attention / 5 behaviors / Hallucinations) → Part 5 (live demo: setup / summary) → Part 6 (Players / Practical truth) → Part 7 (5 concepts: Context / Prompt / RAG / Reasoning / Tool Use) → Tool Matrix → Part 9 (divider / Auto-vs-Agent) → Projects (14 cards, last 2 centered) → **Aviv quote (penultimate)** → Socials (last).
 
 If you reorder, the dot-nav and counter rebuild automatically from the DOM order — no JS changes needed.
