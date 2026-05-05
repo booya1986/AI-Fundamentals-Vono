@@ -8,9 +8,11 @@ Single-file Hebrew/RTL HTML slide deck for the Vono workshop ("AI Fundamentals @
 
 ## Files
 
-- `index.html` — the entire deck (HTML + inline `<style>` + inline `<script>`). ~3900 lines.
-- `avi.png` — clean cutout of the presenter, used in slide 2 (About).
-- `image.png` — Aviv Madar (Vono founder) photo with NERF guns, used in the closing-quote slide.
+- `index.html` — the entire deck (HTML + inline `<style>` + inline `<script>`). ~3600 lines.
+- `assets/avi.png` — clean cutout of the presenter, used in slide 2 (About).
+- `assets/image.jpg` — Aviv Madar (Vono founder) photo with NERF guns, used in the closing-quote slide.
+- `assets/favicon.png` — site favicon (256×256 crop of avi.png).
+- `assets/screenshots/` — slide screenshots used by the README and as the OG share image.
 
 There is no build step, no package manager, no tests. To preview, open `index.html` directly in a browser:
 
@@ -53,6 +55,16 @@ Stat slides (78%, 88/11, 40%) use the same quote layout — the percentage just 
 - `#keyboardHint` — `[←] [→] [Space]` chips + `לניווט`, fades after 6s
 - Keyboard: ArrowLeft = next, ArrowRight = prev (RTL), Space/PageDown = next, PageUp = prev, Home/End, F for fullscreen
 - Touch: swipe left advances (RTL-correct)
+
+### Share-link / SEO
+
+The `<head>` block carries Open Graph + Twitter Card meta tags pointing at `assets/screenshots/slide-01-title.png` (1920×1080). When the URL is pasted into Slack/WhatsApp/Twitter, the preview shows the title slide. If you swap the title slide visual significantly, regenerate the screenshot via the Playwright MCP (capture viewport at 1920×1080) and overwrite `assets/screenshots/slide-01-title.png` — the OG meta points to the live URL of that file.
+
+### Animations
+
+All `@keyframes` animations are wrapped in `@media (prefers-reduced-motion: reduce)` overrides at the bottom of the `<style>` block. When adding a new animation, add a corresponding `animation: none;` rule there. Currently guarded: `.slide::before` (gridDrift), `.about-smoke .smoke` (smokeDrift), `.demo-blink`/`.cta-meta-item .pulse` (blink), `.slide[data-layout="probability"] .prob-fill` (probFill), `.cw-token` (cwFlow).
+
+The probability bars (slide 20) use a CSS variable `--w` on each `.prob-fill` (e.g. `style="--w: 62%;"`) and animate from 0 to that width when the slide becomes `.active`. To change a percentage, edit the `--w` inline style.
 
 ### CSS conventions (deck-wide)
 
